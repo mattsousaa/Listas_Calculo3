@@ -1,0 +1,104 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{epsfig}
+\usepackage{multicol}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{fancyheadings}
+\usepackage{amsmath}
+\usepackage{calrsfs}
+\usepackage{enumerate}
+\DeclareGraphicsExtensions{.png,.pdf}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{esint}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{tasks}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs} % Transformada de Laplace
+\usepackage{indentfirst}
+
+% As margens
+\setlength{\textheight}{24.0cm}
+\setlength{\textwidth}{17.5cm}
+\setlength{\oddsidemargin}{2.0cm} % Margens reais desejadas
+\setlength{\evensidemargin}{2.0cm} % 2+17.5+1.5=21cm (largura A4)
+\setlength{\topmargin}{1.5cm} % 1.5+1.6+1.0+24.0+1.6=29.7cm
+\setlength{\headheight}{1.6cm} % (altura A4)
+\setlength{\headsep}{1.0cm}
+\setlength{\columnsep}{1.5cm} % Coluna = 8cm ((17.5-1.5)/2)
+\addtolength{\oddsidemargin}{-1in}
+\addtolength{\evensidemargin}{-1in}
+\addtolength{\topmargin}{-1in}
+\setlength{\footskip}{0.0cm}
+
+
+% Novos comandos
+\newcommand{\limite}{\displaystyle\lim}
+\newcommand{\integral}{\displaystyle\int}
+\newcommand{\somatorio}{\displaystyle\sum}
+\newcommand{\mat}[1]{\mbox{\boldmath{$#1$}}} 
+
+\pagestyle{fancy}
+
+
+\usepackage{lipsum}
+
+\lhead{
+\includegraphics[width=1cm]{brasao.png}
+}
+
+\rhead{ 
+\sc\textbf{U}niversidade \textbf{F}ederal do \textbf{C}eará\\
+Campus Quixadá\\ Monitoria de Cálculo II e III}
+
+\cfoot{}
+
+\begin{document}
+
+	\begin{center}
+		\Large Questões extras - Cálculo III
+	\end{center}
+	
+
+	\begin{enumerate}
+	
+\item Os geólogos estudam como as cadeias de montanhas foram formadas e estimam o trabalho
+necessário para elevá-las em relação ao nível do mar. Na questão abaixo é solicitado que você use a integral tripla para calcular o trabalho realizado na formação do Monte Fuji, no Japão.
+
+Quando estudam a formação de cordilheiras, os geólogos estimam a quantidade de trabalho necessária para erguer uma montanha a partir do nível do mar. Considere uma montanha que tenha essencialmente o formato de um cone circular reto. Suponha que a densidade do material na vizinhança de um ponto $P$ seja $g(P)$ e a altura seja $h(P)$.
+
+\begin{enumerate}
+\item Determine a integral definida que representa o trabalho total exercido para formar a montanha.
+
+\item Assuma que o monte Fuji no Japão tenha o formato de um cone circular reto com raio de $19000$ $m$, altura de $3800$ $m$ e densidade constante de $3200$ $kg/m^3$. Quanto trabalho foi feito para formar o monte Fuji se a terra estivesse inicialmente ao nível do mar? 
+\end{enumerate}
+
+\item Na física o estudo de oscilações é muito importante e está muito presente dentro do nosso dia a dia. Um dos problemas mais clássicos que temos é a descrição vibratória de fenômenos oscilatórios, como a vibração de uma das cordas de um violão, por exemplo. Imagine uma corda presa em suas extremidades. Essa corda quando está relaxada possui comprimento L. Alguém a vibra de forma que seu movimento é de forma vibratória e estacionária. Mostre que com as informações abaixo você pode demonstrar a natureza matemática de uma corda em vibração. No final de tudo, esclareça suas conclusões e demonstre o significado das contas. Cálculo com número não é significado. Interprete. 
+	
+	Uma corda vibra de acordo com uma função $u = u(x,t)$, onde $t$ é o tempo e $x$ é a posição que a onda se encontra do eixo x. Imagine uma corda vibrando ao longo de um plano cartesiano $xy$, onde o eixo y é equivalente a $u$ e o eixo x é equivalente ao tempo. Temos condições de fronteira que modelam o nosso problema, e podem ser definidas como:
+	$$u(x,y) = 
+		\begin{cases}
+			u_{tt} = c^2u_{xx} \\
+			u(0,t) = 0 \\
+			u(L,t) = 0 \\
+			u(x,0) = f(x) \\
+			u_t(x,0) = g(x)
+		\end{cases}
+	$$
+	
+	$u_{tt} = c^2u_{xx}$ é a equação que descreve movimentos oscilatórios em geral. O método de resolução é por separação de variáveis. Imagine que $u(x,t)$ pode ser decomposta em outras duas funções:
+	$$u(x,t) = \phi (t) \psi (t) $$
+	A ideia é fazer por partes. Na equação acima você pode usar:
+	$$u_{tt} = \phi (x) \psi ''(t) $$
+	$$u_{xx} = \psi (t) \phi ''(x) $$
+	
+	Utilize cada condição de fronteira nas 2 equações acima. Mostre que através disso, podemos descrever $u(x,t)$ como:
+	
+	$$u(x,t) = \displaystyle\frac{8a}{\pi ^2} \somatorio_{n=1}^{\infty} \displaystyle\frac{(-1)^n}{(2n + 1)^2} \cos \displaystyle\left(\frac{(2n + 1)\pi t}{2}\right) \sin \displaystyle\left(\frac{(2n + 1)\pi x}{2}\right)$$
+
+\end{enumerate}
+		
+	
+\end{document}

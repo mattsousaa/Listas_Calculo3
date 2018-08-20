@@ -1,0 +1,156 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{epsfig}
+\usepackage{multicol}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{fancyheadings}
+\usepackage{amsmath}
+\usepackage{calrsfs}
+\usepackage{enumerate}
+\usepackage{enumitem}   
+\DeclareGraphicsExtensions{.png,.pdf}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{esint}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{tasks}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs} % Transformada de Laplace
+\usepackage{indentfirst}
+
+% As margens
+\setlength{\textheight}{24.0cm}
+\setlength{\textwidth}{17.5cm}
+\setlength{\oddsidemargin}{2.0cm} % Margens reais desejadas
+\setlength{\evensidemargin}{2.0cm} % 2+17.5+1.5=21cm (largura A4)
+\setlength{\topmargin}{1.5cm} % 1.5+1.6+1.0+24.0+1.6=29.7cm
+\setlength{\headheight}{1.6cm} % (altura A4)
+\setlength{\headsep}{1.0cm}
+\setlength{\columnsep}{1.5cm} % Coluna = 8cm ((17.5-1.5)/2)
+\addtolength{\oddsidemargin}{-1in}
+\addtolength{\evensidemargin}{-1in}
+\addtolength{\topmargin}{-1in}
+\setlength{\footskip}{0.0cm}
+
+
+% Novos comandos
+\newcommand{\limite}{\displaystyle\lim}
+\newcommand{\integral}{\displaystyle\int}
+\newcommand{\somatorio}{\displaystyle\sum}
+\newcommand{\mat}[1]{\mbox{\boldmath{$#1$}}} 
+
+\pagestyle{fancy}
+
+
+\usepackage{lipsum}
+
+\lhead{
+\includegraphics[width=1cm]{brasao.png}
+}
+
+\rhead{ 
+\sc\textbf{U}niversidade \textbf{F}ederal do \textbf{C}eará\\
+Campus Quixadá\\ Monitoria de Cálculo II, III e EDO}
+
+\cfoot{}
+
+\begin{document}
+
+	\begin{center}
+		\Large Lista 6 - Campos vetoriais não conservativos e Teorema de Green
+	\end{center}
+	
+
+	\begin{enumerate}
+	
+	\item Uma partícula é transportada do ponto inicial $A(0 \textrm{,}\ 0 \textrm{,}\ 0)$ até o ponto final $B(1 \textrm{,}\ 1 \textrm{,}\ 1)$ por uma força $\vec{F}$ dada por
+  $$\vec{F} = y\vec{i} - x\vec{j} + 3z\vec{k}$$
+  
+  Determine o trabalho realizado pela força $\vec{F}$ para levar a partícula de $A$ a $B$ ao longo das curvas abaixo. Todas as unidades são do SI.
+  
+      \begin{enumerate}[label=(\roman*)]
+       \item Reta dada por $\vec{r} = t\vec{i} + t\vec{j} + t\vec{k}$.
+       \item Curva dada por $y = x^2$, $z = x^3$, de $x = 0$ a $x = 1$.
+      \end{enumerate}
+ 
+	\item Uma partícula é transportada do ponto inicial $A(0 \textrm{,}\ 0 \textrm{,}\ 0)$ até o ponto final $B(1 \textrm{,}\ 1 \textrm{,}\ 1)$ por uma força $\vec{F}$ dada por
+  $$\vec{F} = 2x\vec{i} - 4x^2\vec{j} + 3yz\vec{k}$$
+  
+  \begin{enumerate}[label=(\roman*)]
+       \item Reta dada por $\vec{r} = t\vec{i} + t\vec{j} + t\vec{k}$.
+       \item Curva dada por $y = x^2$, $z = x^3$, de $x = 0$ a $x = 1$.
+       \item Segmentos de reta de $A(0 \textrm{,}\ 0 \textrm{,}\ 0)$ a $A(1 \textrm{,}\ 0 \textrm{,}\ 0)$, depois a $A(1 \textrm{,}\ 1 \textrm{,}\ 0)$ até chegar em $A(1 \textrm{,}\ 1 \textrm{,}\ 1)$.
+      \end{enumerate}
+      
+	\item Uma força dada por 
+	$$\vec{F} = -2y \vec{i} + 2x\vec{j} + z\vec{k}$$ 
+	
+	é aplicada sobre uma partícula de massa $m$ constante. Determine o trabalho realizado por essa força quando a partícula executa uma volta completa numa elipse descrita por 
+	$$\vec{r}(t) = a\cos t\vec{i} + b\sin t\vec{j}$$ 
+	onde $a$ e $b$ são constantes positivas e $t \in [0 \textrm{,}\ 2\pi]$
+	
+	\item Um campo elétrico dado por
+	$$\vec{E} = xy \vec{i} - 3xz\vec{j} + 4y^3z^2\vec{k}$$ 
+	
+	existe numa certa região, situada no vácuo. Todas as unidades são do SI. Responda ao ao seguinte:
+	
+	\begin{enumerate}[label=(\roman*)]
+       \item Determine a densidade volumétrica de carga na região.
+       \item Verifique se o campo elétrico é não conservativo.
+       \item Calcule a fem produzida num circuito fechado formado pelos segmentos de reta definidos entre os pontos $A(4 \textrm{,}\ 0 \textrm{,}\ 0)$, $B(0 \textrm{,}\ 0 \textrm{,}\ 2)$, $C(0 \textrm{,}\ 3 \textrm{,}\ 0)$.
+      \end{enumerate}
+      
+     \item Um campo elétrico numa dada região cilíndrica é dado, em coordenadas cilíndricas, por
+     $$\vec{E} = \displaystyle\dfrac{3}{\rho^2}\hat{\theta}$$
+     
+     onde $\rho \leq 5$ e $-5 \leq z \le1 5$. Existe na região um circuito circular de raio $R = 2$ m situado no plano $xy$ e centrado na origem. Esse circuito é formado por fios condutores cuja resistência elétrica total vale $R = 5 \Omega$. Determine a potência elétrica dissipada pelo circuito quando o campo elétrico é ligado. 
+     
+     \item O campo magnético numa dada região é dado por (em unidades do SI)
+     $$\vec{B} = 2y \vec{i} - 5x\vec{j}$$
+     
+     Determine a circuitação magnética ao longo de um circuito quadrado de vértices $A(0 \textrm{,}\ 0 \textrm{,}\ 0)$, $B(0 \textrm{,}\ 2 \textrm{,}\ 0)$, $C(2 \textrm{,}\ 2 \textrm{,}\ 0)$ e $D(2 \textrm{,}\ 0 \textrm{,}\ 0)$, no sentido $ABCDA$. 
+     
+     \item Determine a integral 
+     
+     $$\displaystyle\oint_C (2x^3 - y^3) \ dx + (x^3 + y^3) \ dy$$
+     
+     onde $C$ é dado pela circunferência descrita por $x^2 + y^2 = 1$. Resolva a integral por dois métodos diferentes.
+     
+     \item Mostre que a área delimitada por uma curva $C$ plana pode ser obtida por meio de
+     $$A = \displaystyle\dfrac{1}{2}\oint_C (x \ dy - y \ dx)$$ 
+     
+     \item Calcule $\displaystyle\int_C x^4 \ dx + xy \ dy$, onde $C$ é a curva triangular constituída pelos segmentos de reta de $(0 \textrm{,}\ 0)$ a $(1 \textrm{,}\ 0)$, de $(1 \textrm{,}\ 0)$ a $(0 \textrm{,}\ 1)$, e de $(0 \textrm{,}\ 1)$ a $(0 \textrm{,}\ 0)$.
+     
+     \item Calcule $\displaystyle\oint_C(3y - e^{\sin x}) \ dx + (7x + \sqrt{y^4 + 1}) \ dy$, onde $C$ é o círculo $x^2 + y^2 = 9$.
+     
+\item Calcule $\displaystyle\ointctrclockwise_C y^2 \ dx + 3xy \ dy$, onde $C$ é o limite da região semianular $D$ contida no semiplano superior entre os círculos $x^2 + y^2 = 1$ e $x^2 + y^2 = 4$.
+
+\item Calcule a integral de linha por dois métodos: 
+
+\begin{enumerate}
+\item diretamente e 
+\item utilizando o Teorema de Green.
+\end{enumerate}
+
+
+\begin{enumerate}[label=(\roman*)]
+       \item $\displaystyle\ointctrclockwise_C (x - y) \ dx + (x + y) \ dy$, $C$ é o círculo com centro na origem e raio 2.
+       \item $\displaystyle\ointctrclockwise_C xy \ dx + x^2 \ dy$, $C$ é o retângulo com vértices $(0 \textrm{,}\ 0)$, $(3 \textrm{,}\ 0)$, $(3 \textrm{,}\ 1)$ e $(0 \textrm{,}\ 1)$
+       \item $\displaystyle\ointctrclockwise_C x^2y^2 \ dx + xy \ dy$, $C$ consiste no arco da parábola $y = x^2$ de $(0 \textrm{,}\ 0)$ a $(1 \textrm{,}\ 1)$ e os segmentos de reta de $(1 \textrm{,}\ 1)$ a $(0 \textrm{,}\ 1)$ e de $(0 \textrm{,}\ 1)$ a $(0 \textrm{,}\ 0)$. 
+\end{enumerate}
+      
+\item Uma partícula inicialmente no ponto $(-2 \textrm{,}\ 0)$ se move ao longo do eixo $x$ para $(2 \textrm{,}\ 0)$, e então ao longo da semicircunferência $\sqrt{4 - x^2}$ até o ponto inicial. Utilize o Teorema de Green para determinar o trabalho realizado nessa partícula pelo campo de força $$\vec{B} = x\vec{i} + x^3\vec{j} + 3xy^2\vec{k}$$. 
+
+\item Seja $D$ a região limitada por um caminho fechado simples $C$ no plano xy. Utilize o Teorema de Green para demonstrar que as coordenadas do centroide $(\bar{x} \textrm{,}\ \bar{y})$ de $D$ são
+
+$$\bar{x} = \displaystyle\dfrac{1}{2A}\ointctrclockwise_C x^2 \ dy \quad \quad \quad \bar{y} = - \displaystyle\dfrac{1}{2A}\ointctrclockwise_C y^2 \ dx$$ onde $A$ é a área de $D$.
+
+\item Uma lâmina plana com densidade constante $\rho(x,y) = \rho$ ocupa uma região do plano xy limitada por um caminho fechado simples $C$. Mostre que seus momentos de inércia em relação aos eixos são
+
+$$I_x = - \displaystyle\dfrac{\rho}{3}\ointctrclockwise_C y^3 \ dx \quad \quad \quad I_y = \displaystyle\dfrac{\rho}{3}\ointctrclockwise_C x^3 \ dy$$ 
+	
+\end{enumerate}		
+	
+\end{document}

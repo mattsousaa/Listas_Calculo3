@@ -1,0 +1,149 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{epsfig}
+\usepackage{multicol}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{fancyheadings}
+\usepackage{amsmath}
+\usepackage{calrsfs}
+\usepackage{enumerate}
+\usepackage{enumitem}   
+\DeclareGraphicsExtensions{.png,.pdf}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{esint}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{tasks}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs} % Transformada de Laplace
+\usepackage{indentfirst}
+
+% As margens
+\setlength{\textheight}{24.0cm}
+\setlength{\textwidth}{17.5cm}
+\setlength{\oddsidemargin}{2.0cm} % Margens reais desejadas
+\setlength{\evensidemargin}{2.0cm} % 2+17.5+1.5=21cm (largura A4)
+\setlength{\topmargin}{1.5cm} % 1.5+1.6+1.0+24.0+1.6=29.7cm
+\setlength{\headheight}{1.6cm} % (altura A4)
+\setlength{\headsep}{1.0cm}
+\setlength{\columnsep}{1.5cm} % Coluna = 8cm ((17.5-1.5)/2)
+\addtolength{\oddsidemargin}{-1in}
+\addtolength{\evensidemargin}{-1in}
+\addtolength{\topmargin}{-1in}
+\setlength{\footskip}{0.0cm}
+
+
+% Novos comandos
+\newcommand{\limite}{\displaystyle\lim}
+\newcommand{\integral}{\displaystyle\int}
+\newcommand{\somatorio}{\displaystyle\sum}
+\newcommand{\mat}[1]{\mbox{\boldmath{$#1$}}} 
+
+\pagestyle{fancy}
+
+
+\usepackage{lipsum}
+
+\lhead{
+\includegraphics[width=1cm]{brasao.png}
+}
+
+\rhead{ 
+\sc\textbf{U}niversidade \textbf{F}ederal do \textbf{C}eará\\
+Campus Quixadá\\ Monitoria de Cálculo II, III e EDO}
+
+\cfoot{}
+
+\begin{document}
+
+	\begin{center}
+		\Large Lista 7 - Integrais de Superfície e Teorema da divergência de Gauss
+	\end{center}
+	
+
+	\begin{enumerate}
+	
+	\item Seja $S$ uma superfície paramétrica descrita pela fórmula explícita $z = f(x,y)$, com $(x,y)$ a variar numa região plana $T$, projeção de $S$ no plano XOY. Sejam $F = P\vec{i} + Q\vec{j} + R\vec{k}$ e $\textbf{n}$ a normal unitária a $S$ cuja componente segundo OZ é não negativa. Utilizar a representação paramétrica $r(x,y) = x\vec{i} + y\vec{j} + f(x,y)\vec{k}$ e provar que
+	$$\displaystyle\iint_S F \cdot n \ dS = \displaystyle\iint_T \left( -P\displaystyle\dfrac{\partial f}{\partial x} - Q\displaystyle\dfrac{\partial f}{\partial y} + R\right) dx \ dy$$
+	
+	\item Seja $S$ a mesma superfície do Exercício anterior e $\varphi$ um campo escalar. Provar que:
+	\begin{enumerate}
+	\item $\displaystyle\iint_S \varphi (x,y,z) dS = \displaystyle\iint_S \varphi [x,y,f(x,y)]\sqrt{1 + \left(\displaystyle\dfrac{\partial f}{\partial x}\right)^2 + \left(\displaystyle\dfrac{\partial f}{\partial y}\right)^2} dx \ dy $
+	\item $\displaystyle\iint_S \varphi (x,y,z) dy \wedge dz  = - \displaystyle\iint_T \varphi [x,y,f(x,y)] \ \displaystyle\dfrac{\partial f}{\partial x} \ dx \ dy$
+	\item $\displaystyle\iint_S \varphi (x,y,z) dz \wedge dx  = - \displaystyle\iint_T \varphi [x,y,f(x,y)] \ \displaystyle\dfrac{\partial f}{\partial y} \ dx \ dy$
+	\end{enumerate}
+	
+	\item Calcule a integral de superfície $\displaystyle\iint_S x^2 \, dS$, onde $S$ é a  esfera unitária $x^2 + y^2 + z^2 = 1$.
+ 
+	\item Calcule $\displaystyle\iint_S y \, dS$, onde $S$ é a superfície $z = x + y^2$, $0 \leq x \leq 1$, $0 \leq y \leq 2$.
+	
+	\item Calcule $\displaystyle\iint_S z \, dS$ onde $S$ é a superfície cujo lado $S_1$ é dado pelo cilindro $x^2 + y^2 = 1$, cujo fundo $S_2$ é o círculo $x^2 + y^2 \leq 1$ no plano $z = 0$, e cujo topo $S_3$ é a parte do plano $z = 1 + x$ que está acima de $S_2$.
+      
+     \item Determine o fluxo do campo vetorial $F(x,y,z) = z \vec{i} + y \vec{j} + x \vec{k}$ através da esfera unitária $x^2 + y^2 + z^2 = 1$.
+     
+     \item Calcule $\displaystyle\iint_S F \cdot dS$, onde $F(x,y,z) = y\vec{i} + x\vec{j} + z\vec{k}$ e $S$ é o limite da região sólida E delimitada pelo paraboloide $z = 1 - x^2 - y^2$ e o plano $z = 0$.
+     
+     \item A temperatura $u$ em uma bola metálica é proporcional ao quadrado da distância do centro da bola. Determine a taxa de transmissão de calor através de uma esfera S de raio a e centro no centro da bola.
+     
+     \item Calcule a integral de superfície
+     \begin{enumerate}
+     \item $\displaystyle\iint_S (x + y + z) \ dS$, $S$ é o paralelogramo com equações paramétricas $x = u + v$, $y = u - v$, $z = 1 + 2u + v$, $0 \leq u \leq 2, 0 \leq v \leq 1$.
+     \item $\displaystyle\iint_S xyz \ dS$, $S$ é o cone com equações paramétricas $x = ucos v$, $y = u\sin v$, $z = u$, $0 \leq u \leq 1$, $0 \leq v \leq \pi/2$
+     \item $\displaystyle\iint_S y \ dS$, $S$ é o helicoide com equação vetorial $r(u,v) = \langle u \cos v, u \sin v, v \rangle$, $0 \leq u \leq 1$, $0 \leq v \leq \pi$.
+     \item $\displaystyle\iint_S (x^2 + y^2) \ dS$, $S$ é a superfície com equação vetorial $r(u,v) = \langle 2uv, u^2 - v^2, u^2 + v^2 \rangle$, $u^2 + v^2 \leq 1$.
+     \item $\displaystyle\iint_S x \ dS$, $S$ é a região triangular com vértices $(1 \textrm{,}\ 0 \textrm{,}\ 0)$, $(0 \textrm{,}\ -2 \textrm{,}\ 0)$ e $(0 \textrm{,}\ 0 \textrm{,}\ 4)$.
+     \end{enumerate}
+     
+     \item A água do mar tem densidade 1.025 $kg/m^3$ e flui em um campo de velocidade $v = y\vec{i} + x\vec{j}$, onde x,y e z são medidos em metros e as componentes de v, em metros por segundo. Encontre a taxa de vazão para fora do hemisfério $x^2 + y^2 + z^2 = 9$, $z \geq 0$.
+     
+     \item Use a Lei de Gauss para achar a carga contida no hemisfério sólido $x^2 + y^2 + z^2 \leq a^2$, $z \geq 0$, se o campo elétrico for 
+     $$E(x,y,x) = x\vec{i} + y\vec{j} + 2z\vec{k}$$ 
+     
+     \item Use a Lei de Gauss para achar a carga dentro de um cubo com vértices $(\pm 1 \textrm{,}\ \pm 1 \textrm{,}\ \pm 1)$ se o campo elétrico for
+     $$E(x,y,x) = x\vec{i} + y\vec{j} + z\vec{k}$$
+     
+\item Seja $\sigma:\Omega \subset \mathbb{R}^2 \to \mathbb{R}^2$, $\Omega$ aberto, uma superfície de classe $C^1$ dada por $\sigma (u,v) = (x(u,v), y(u,v), z(u,v))$. Verifique que
+
+$$\displaystyle\dfrac{\partial \sigma}{\partial u} \wedge \displaystyle\dfrac{\partial \sigma}{\partial v} = \displaystyle\dfrac{\partial (y,z)}{\partial (u,v)}\vec{i} + \displaystyle\dfrac{\partial (z,x)}{\partial (u,v)}\vec{j} + \displaystyle\dfrac{\partial (x,y)}{\partial (u,v)}\vec{k}$$
+
+\item Calcule a área: 
+
+\begin{enumerate}
+\item $\sigma (u,v) = (u \textrm{,}\ v \textrm{,}\ 1 - u - v)$, $u \geq 0$, $v \geq 0$ e $u + v \leq 1$.
+\item $\sigma (u,v) = (u \textrm{,}\ v \textrm{,}\ 2 - u - v)$, $u^2 + v^2 \leq 1$.
+\item $\sigma (u,v) = (u \textrm{,}\ v \textrm{,}\ u^2 + v^2)$, $u^2 + v^2 \leq 4$.
+\item $\sigma (u,v) = (\cos u \textrm{,}\ v \textrm{,}\ \sin u)$, $u^2 + 4v^2 \leq 1$.
+\item $\sigma (u,v) = (u \textrm{,}\ v \textrm{,}\ 4 - u^2 - v^2)$, $(u,v) \in K$, onde $K$ é o conjunto no plano $uv$ limitado pelo eixo $u$ e pela curva (em coordenadas polares) $\rho = e^{-\theta}$, $0 \leq \theta \leq \pi$.
+
+\end{enumerate}
+      
+\item Seja $f:K \to \mathbb{R}$ de classe $C^1$ no compacto K com fronteira de conteúdo nulo e interior não-vazio. Mostre que a área da superfície $z = f(x,y)$(isto é, da superfície $\sigma$ dada por $x = u$, $y = v$ e $z = f(u,v)$) é dada pela fórmula
+$$\displaystyle\iint_K \sqrt{1 + \left(\displaystyle\dfrac{\partial f}{\partial x}\right)^2 + \left(\displaystyle\dfrac{\partial f}{\partial y}\right)^2} \ dx \ dy$$ 
+
+\item Calcule a área da parte da superfície $z = xy$ que se encontra dentro do cilindro $x^2 + y^2 \leq 4$ e fora do cilindro $x^2 + y^2 \leq 1$.
+
+\item Seja K o conjunto do plano xy limitado pelas curvas (em coordenadas polares) $\rho = \tan \theta$, $0 \leq \theta \leq \pi/2$, e $\theta = \pi/4$, Calcule a área da superfície $z = xy$, $(x,y) \in K$.
+
+\item Seja K o conjunto do plano xy limitado pela curva (em coordenadas polares) $\rho^2 = \cos 2 \theta$, $-\pi/4 \leq \theta \leq \pi/4$. Calcule a área da superfície $z = xy$, $(x,y) \in K$.
+
+\item Calcule a área da parte do parabolóide elíptico $z = x^2 + 2y^2$ que se encontra dentro do cilindro $4x^2 + 16y^2 \leq 1$.
+
+\item Seja $F:\Omega \subset \mathbb{R}^3 \to \mathbb{R}$, $\Omega$  aberto, uma função de classe $C^1$ tal que $\displaystyle\dfrac{\partial F}{\partial z} \neq 0$ em $\Omega$, Seja $f:K \to \mathbb{R}$, onde K é um compacto com fronteira de conteúdo nulo e interior não-vazio contido em $\Omega$, tal que $F(x,y,f(x,y)) = 0$ para todo $(x,y) \in K$, isto é, $z = f(x,y)$ é definida implicitamente pela equação $F(x,y,z) = 0$. Mostre que a área da superfície $z = f(x,y)$ é dada pela fórmula
+$$\displaystyle\iint_K \displaystyle\dfrac{\sqrt{\left(\displaystyle\dfrac{\partial F}{\partial x}\right)^2 + \left(\displaystyle\dfrac{\partial F}{\partial y}\right)^2 + \left(\displaystyle\dfrac{\partial F}{\partial z}\right)^2}}{\left| \displaystyle\dfrac{\partial F}{\partial z}\right| } \ dx \ dy$$
+
+\item Seja $S$ a porção do plano $x + y + z = t$ determinada na esfera de raio unitário $x^2 + y^2 + z^2 = 1$. Seja $\varphi (x,y,z) = 1 - x^2 - y^2 - z^2$ se $(x,y,z)$ é interior a esta esfera, e seja $\varphi (x,y,z) = 0$ em qualquer outra hipótese. Prove que:
+
+$$\displaystyle\iint_S \varphi (x,y,z) \ dS  = 
+		\begin{cases}
+			\displaystyle\dfrac{\pi}{18}(3 - t^2)^2\, \quad\quad \textrm{ se }\  |t| \leq \sqrt{3} \\
+			0 \quad\quad\quad\quad\quad\quad\quad  \textrm{se }\ |t| > \sqrt{3} \\
+		\end{cases}
+$$
+
+Sugestão: Introduzir novas coordenadas $(x_1 \textrm{,}\ y_1 \textrm{,}\ z_1)$ com o eixo $OZ_1$ normal ao plano $x + y + z = t$. Usar depois coordenadas polares no plano $OX_1Y_1$ como parâmetros para S.
+
+\end{enumerate}		
+	
+\end{document}

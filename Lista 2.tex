@@ -1,0 +1,153 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{epsfig}
+\usepackage{multicol}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{fancyheadings}
+\usepackage{amsmath}
+\usepackage{calrsfs}
+\usepackage{enumerate}
+\DeclareGraphicsExtensions{.png,.pdf}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{esint}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{tasks}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs} % Transformada de Laplace
+\usepackage{indentfirst}
+
+% As margens
+\setlength{\textheight}{24.0cm}
+\setlength{\textwidth}{17.5cm}
+\setlength{\oddsidemargin}{2.0cm} % Margens reais desejadas
+\setlength{\evensidemargin}{2.0cm} % 2+17.5+1.5=21cm (largura A4)
+\setlength{\topmargin}{1.5cm} % 1.5+1.6+1.0+24.0+1.6=29.7cm
+\setlength{\headheight}{1.6cm} % (altura A4)
+\setlength{\headsep}{1.0cm}
+\setlength{\columnsep}{1.5cm} % Coluna = 8cm ((17.5-1.5)/2)
+\addtolength{\oddsidemargin}{-1in}
+\addtolength{\evensidemargin}{-1in}
+\addtolength{\topmargin}{-1in}
+\setlength{\footskip}{0.0cm}
+
+
+% Novos comandos
+\newcommand{\limite}{\displaystyle\lim}
+\newcommand{\integral}{\displaystyle\int}
+\newcommand{\somatorio}{\displaystyle\sum}
+\newcommand{\mat}[1]{\mbox{\boldmath{$#1$}}} 
+
+\pagestyle{fancy}
+
+
+\usepackage{lipsum}
+
+\lhead{
+\includegraphics[width=1cm]{brasao.png}
+}
+
+\rhead{ 
+\sc\textbf{U}niversidade \textbf{F}ederal do \textbf{C}eará\\
+Campus Quixadá\\ Monitoria de Cálculo II e III}
+
+\cfoot{}
+
+\begin{document}
+
+	\begin{center}
+		\Large Lista 2 - Cálculo III
+	\end{center}
+	
+	\textbf{obs:} Use $\vec{E} = - \nabla V$ e $\nabla \vec{E} = \displaystyle \dfrac{\rho}		{\varepsilon_0}$ quando achar necessário. ($\rho$ = densidade de carga).
+
+	\begin{enumerate}
+	
+	\item O potencial elétrico em um ponto central de um anel uniformemente carregado é dado por
+	$$V = \displaystyle\dfrac{1}{4 \pi \varepsilon_0} \displaystyle\dfrac{1}{R^2 + x^2}$$
+	
+	Onde $\varepsilon_0$ é uma constante, $R$ é o raio do anel e $x$ é um eixo que passa pelo seu centro. A partir dessa equação, determine uma expressão para o campo elétrico em qualquer eixo do anel.	
+	
+	\item O potencial elétrico em um ponto do eixo central de um disco uniformemente carregado é dado por
+	$$V = \displaystyle\dfrac{\sigma}{2\varepsilon_0}\sqrt{z^2 + R^2} - z$$
+	
+	Onde $\sigma$ e $\varepsilon_0$ são constantes. $R$ é o raio do disco e $z$ é um eixo que passa pelo mesmo. A partir dessa equação, determine uma expressão para o campo elétrico em qualquer eixo do disco. 
+	
+	\item O potencial eletrostático numa dada região que contém vácuo é dado por
+	$$V = 3xy^3 + 2xz^3 - 4z$$
+	Obtenha o campo eletrostático correspondente e a densidade de carga na região.
+	
+\textbf{Informação para próxima questão}	
+	
+	Campos magnetostáticos devem satisfazer uma equação para o rotacional de $\vec{B}$, dada por
+	$$\nabla \times \vec{B} = \mu_0 \mathcal{\vec{J}} $$	
+	
+	onde $\mathcal{\vec{J}}$ é uma grandeza chamada densidade de corrente volumétrica. Esta equação é conhecida como Lei de Ámpere na forma diferencial, e ela indica que, em geral, $\vec{B}$ não é um campo irrotacional, ou conservativo. Note que, se $\vec{B}$ for conhecido, $\mathcal{\vec{J}}$ pode ser determinado mediante a equação acima.
+	
+	\item O campo magnético numa dada região no vácuo é dado por 
+	$$\vec{B} = \mu_0(\alpha y \mat{\hat{i}} - \beta x \mat{\hat{j}})$$
+	
+	Determine a densidade de corrente $\mathcal{\vec{J}}$ associada a esse campo mediante a lei de Ampére.
+	
+	\item Considere um fio retilíneo de raio $R$, percorrido por uma corrente $i$. O campo magnético para fora do fio é dado pela equação
+	$$\vec{B} = \displaystyle\dfrac{\mu_0 i}{2\pi \rho} \mat{\hat{\theta}}$$ 
+	
+	Verifique se o potencial magnético escalar 
+	$$\Theta = - \displaystyle\dfrac{\mu_0 i \theta}{2\pi}$$
+	pode estar associado ao fio retilíneo, ou seja, se 
+	$$\vec{B} = - \nabla \Theta$$
+	
+	\item Seja $\vec{F} = P \mat{\hat{i}} + Q \mat{\hat{j}}$ um campo vetorial de $\mathbb{R}^2$ em $\mathbb{R}^2$, com $P$ e $Q$ diferenciáveis. Sejam $\vec{u} = \cos \alpha \hat{i} + \sin \alpha \hat{j}$ e $\vec{v} = - \sin \alpha \hat{i} + \cos \alpha \hat{j}$, onde $\alpha \neq 0$ é um real dado. Seja $(s,t)$ as coordenadas de $(x,y)$ no sistema de coordenadas $(0, \vec{u}, \vec{v})$. Assim $(x,y) = s \hat{u} + t \hat{v}$. Observe que $(x,y) = s \hat{u} + t \hat{v}$ é equivalente a $x = s \cos \alpha - t \sin \alpha$ e $y = s \sin \alpha + t \cos \alpha$.
+	\begin{enumerate}
+		\item Mostre que
+		$$\vec{F}(x,y) = [P(x,y) \cos \alpha + Q \sin \alpha] \vec{u} + [Q(x,y) \cos \alpha - P \sin \alpha] \vec{v}$$
+		\item Seja
+		$$\vec{F1}(s,t) = P_1(s,t) \vec{u} + Q_1(s,t)\vec{v}$$
+		onde
+		$$P_1(s,t) = P(x,y)\cos \alpha + Q(x,y) \sin \alpha$$
+		e
+		$$Q_1(s,t) = Q(x,y)\cos \alpha - P(x,y) \sin \alpha$$
+		
+		com $x = s\cos \alpha - t \sin \alpha$ e $y = s\sin \alpha + t \cos \alpha$. Mostre que
+		$$\dfrac{\partial Q_1 }{\partial s}(s,t) - \dfrac{\partial P_1 }{\partial t}(s,t) = \dfrac{\partial Q}{\partial x}(x,y) - \dfrac{\partial P}{\partial y}(x,y)$$
+		onde $(x,y) = s \vec{u} + t\vec{v}$. Interprete. (Observe que $\vec{F_1}(s,t) = \vec{F}(x,y)$ onde $(x,y) = s \vec{u} + t\vec{v}$).
+		
+	\end{enumerate}
+	
+	\item Seja A o retângulo $1 \leq x \leq 2$ e $0 \leq y \leq 1$.Calcule $\displaystyle\iint_A f(x,y) \,dx\,dy$, sendo $f(x,y)$ igual a
+	\begin{enumerate}
+	\item $x + 2y$
+	\item $x - y$
+	\item $\sqrt{x + y}$
+	\item $\displaystyle\dfrac{1}{x+y}$
+	\item $1$
+	\item $x\cos (xy)$
+	\item $y\cos (xy)$
+	\item $\displaystyle\dfrac{1}{(x+y)^2}$
+	\item $ye^{xy}$
+	\item $xy^2$
+	\item $x\sin (\pi y)$
+	
+	\end{enumerate}
+	
+	\item Calcule 
+	
+	\begin{enumerate}
+		\item $\displaystyle\iint_A xy^2 \,dx\,dy$, onde A é o retângulo $1 \leq x \leq 2$ e $2 \leq y \leq 3$.
+		\item $\displaystyle\iint_A x\cos (2y) \,dx\,dy$, onde A é o retângulo $0 \leq x \leq 1$ e $ - \displaystyle\dfrac{\pi}{4} \leq y \leq \displaystyle\dfrac{\pi}{4}$.
+		\item $\displaystyle\iint_A x\ln y \,dx\,dy$, onde A é o retângulo $0 \leq x \leq 2$ e $1 \leq y \leq 2$.
+		\item $\displaystyle\iint_A xy e^{x^2 - y^2} \,dx\,dy$, onde A é o retângulo $-1 \leq x \leq 1$ e $0 \leq y \leq 3$.
+	
+	\end{enumerate}	
+	
+	\item Resolva a integral abaixo sob a região delimitada
+	$$\displaystyle\iint_A \displaystyle\dfrac{xy \sin x }{1 + 4y^2} \,dx\,dy$$ onde A é o retângulo $0 \leq x \leq \displaystyle\dfrac{\pi}{2}$ e $0 \leq y \leq 1$.
+	
+	\item Resolva a integral abaixo sob a região delimitada
+	$$\displaystyle\iint_A \displaystyle\dfrac{\sin^2 x }{1 + 4y^2} \,dx\,dy$$ onde A é o retângulo $0 \leq x \leq \displaystyle\dfrac{\pi}{2}$ e $0 \leq y \leq \displaystyle\dfrac{1}{2}$.	
+	
+	\end{enumerate}
+	
+\end{document}
